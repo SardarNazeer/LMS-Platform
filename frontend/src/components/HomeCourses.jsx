@@ -214,7 +214,7 @@ const HomeCourses = () => {
       </div>
 
       <ToastContainer position="top-right" autoClose={3000} theme="dark" transition={Slide}/>
-      <style jsx>{homeCoursesStyles.animations}</style>
+      <style>{homeCoursesStyles.animations}</style>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import T3 from "../assets/T3.png"
 const testimonials = [
 {
 id: 1,
-name: "Aarav Patel",
+name: "Maya Singh",
 role: "Frontend Learner",
 message:
 "The React Masterclass helped me land my first internship. Projects were practical, and the instructor explained complex topics simply.",
@@ -16,7 +16,7 @@ course: "React Masterclass"
 },
 {
 id: 2,
-name: "Maya Singh",
+name: "Aarav Patel",
 role: "UI/UX Designer",
 message:
 "Design thinking modules were brilliant — hands-on tasks made the concepts stick. The UI examples were gorgeous and practical.",

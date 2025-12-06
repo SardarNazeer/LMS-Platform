@@ -113,7 +113,7 @@ const Banner = () => {
         </div>
       )}
 
-      <style jsx>{customStyles}</style>
+      <style>{customStyles}</style>
 
       {/* Inline Animations */}
       <style>{`

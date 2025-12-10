@@ -720,7 +720,7 @@ starIcon: "w-5 h-5",
 
 export const footerStyles = {
   // Layout and container styles
-  footer: "relative bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50 text-slate-800 overflow-hidden border-t border-slate-200/60",
+footer: "relative bg-white text-slate-800 border-t border-slate-200 pt-28 pb-20 z-10",
   container: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16",
   
   // Grid layout
@@ -771,7 +771,7 @@ export const footerStyles = {
 
 // Background elements styles
 export const footerBackgroundStyles = {
-  backgroundContainer: "absolute inset-0 pointer-events-none",
+backgroundContainer: "absolute inset-0 -z-10 pointer-events-none overflow-hidden",
   floatingOrb1: "hidden sm:block absolute top-10 left-10 w-24 h-24 bg-gradient-to-r from-cyan-200/40 to-blue-300/30 rounded-full blur-xl animate-float-1",
   floatingOrb2: "hidden sm:block absolute top-32 right-20 w-32 h-32 bg-gradient-to-r from-purple-200/30 to-pink-300/20 rounded-full blur-xl animate-float-2",
   floatingOrb3: "hidden sm:block absolute bottom-20 left-1/4 w-28 h-28 bg-gradient-to-r from-emerald-200/20 to-teal-300/20 rounded-full blur-xl animate-float-3",
@@ -1034,7 +1034,7 @@ export const signUpPageCustomStyles = `
 // Add these to the existing dummyStyles.js file
 export const testimonialStyles = {
   // Main Section
-  section: "py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-indigo-50 via-white to-purple-50",
+section: "relative pt-20 pb-40 px-4 sm:px-6 bg-gradient-to-br from-indigo-50 via-white to-purple-50 overflow-hidden",
   container: "max-w-6xl mx-auto text-center mb-12 sm:mb-16",
   
   // Header

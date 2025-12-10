@@ -1,18 +1,17 @@
-import React, { useEffect, useRef } from 'react';
-import { testimonialStyles } from '../assets/dummyStyles';
-import testimonials from '../assets/dummyTestimonial';
-import {BadgeCheck, CalendarDays, MessageSquareQuote} from "lucide-react";
+import React, { useEffect, useRef } from "react";
+import { testimonialStyles } from "../assets/dummyStyles";
+import testimonials from "../assets/dummyTestimonial";
+import { BadgeCheck, CalendarDays, MessageSquareQuote } from "lucide-react";
 
 const Testimonial = () => {
-
-    const cardsRef = useRef([]);
-      // Only apply tilt on pointer (desktop) devices - avoids janky behavior on touch
+  const cardsRef = useRef([]);
+  // Only apply tilt on pointer (desktop) devices - avoids janky behavior on touch
   const isPointerDevice = () =>
     typeof window !== "undefined" &&
     window.matchMedia &&
     window.matchMedia("(pointer:fine)").matches;
 
-    // Enhanced 3D tilt with parallax layers (no-op on small / touch devices)
+  // Enhanced 3D tilt with parallax layers (no-op on small / touch devices)
   const onMouseMove = (e, el, index) => {
     if (!el) return;
     if (!isPointerDevice()) return; // disable tilt on touch / coarse-pointer devices
@@ -120,117 +119,118 @@ const Testimonial = () => {
     ));
   };
 
-
-
   return (
-    <section className={testimonialStyles.section}>
+    <section
+      className={testimonialStyles.section}>
       <div className={testimonialStyles.container}>
         <div className={testimonialStyles.badge}>
-            <div className={testimonialStyles.badgeDot}></div>
-            <span className={testimonialStyles.badgeText}>
-                Students Testimonial
-            </span>
+          <div className={testimonialStyles.badgeDot}></div>
+          <span className={testimonialStyles.badgeText}>
+            Students Testimonial
+          </span>
         </div>
 
         <h2 className={testimonialStyles.title}>
-            <span className={testimonialStyles.titleGradient}>
-                Voices of Success
-            </span>
+          <span className={testimonialStyles.titleGradient}>
+            Voices of Success
+          </span>
         </h2>
 
         <p className={testimonialStyles.subtitle}>
-            Discover how our learners transformed their careers with hands-on
-            project and expert mentorship.
+          Discover how our learners transformed their careers with hands-on
+          project and expert mentorship.
         </p>
       </div>
 
       <div className={testimonialStyles.grid}>
-        {testimonials.map((t,i) => (
-            <div onMouseMove={(e) => onMouseMove(e, cardsRef.current[i], i)}
+        {testimonials.map((t, i) => (
+          <div
+            onMouseMove={(e) => onMouseMove(e, cardsRef.current[i], i)}
             onMouseLeave={() => onMouseLeave(cardsRef.current[i])}
-            key={t.id} className={testimonialStyles.cardWrapper}>
-                <div className={testimonialStyles.glowBorder}></div>
-                <div className={testimonialStyles.backgroundPattern}>
-                  <div className={testimonialStyles.floatingElement1}></div>
-                  <div className={testimonialStyles.floatingElement2}></div>
+            key={t.id}
+            className={testimonialStyles.cardWrapper}
+          >
+            <div className={testimonialStyles.glowBorder}></div>
+            
+            <div className={testimonialStyles.backgroundPattern}>
+              <div className={testimonialStyles.floatingElement1}></div>
+              <div className={testimonialStyles.floatingElement2}></div>
 
-                  <article
-                  className={testimonialStyles.card}
-                  ref={(el) => (cardsRef.current[i] = el)}
-                  style={{
-                    boxShadow: testimonialStyles.cardShadow,
-                  }}>
-                     {/* COURSE BADGE  */}
-                     <div className={testimonialStyles.courseBadge}>
-                      <div className={testimonialStyles.courseBadgeDot}></div>
-                      <span className={testimonialStyles.courseBadgeText}>
-                        {t.course}
-                      </span>
-                     </div>
-
-                     <div className={testimonialStyles.quoteIcon}>
-                      <MessageSquareQuote className={testimonialStyles.quoteIconSvg} />
-                     </div>
-
-                     <div className={testimonialStyles.content}>
-                      <div className={testimonialStyles.avatarContainer}>
-                        <div className={testimonialStyles.avatarWrapper}>
-                          <img  src={t.avatar}
-                           alt="avatars"
-                           className={testimonialStyles.avatarImage}
-                           loading='lazy'
-                            />
-                        </div>
-                        <div className={testimonialStyles.avatarGlow}></div>
-                      </div>
-
-                      <div className={testimonialStyles.userInfo}>
-                        <div className={testimonialStyles.userHeader}>
-                          <div className="min-w-0">
-                            <h3 className={testimonialStyles.userName}>{t.name}</h3>
-                            <p className={testimonialStyles.userRole}>{t.role}</p>
-                          </div>
-                          <div className={testimonialStyles.ratingContainer}>
-                            <div className={testimonialStyles.starsContainer}>
-                              {renderStars(t.rating)}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                     </div>
-
-                     {/* message  */}
-                     <blockquote className={testimonialStyles.message}>
-                      <span className={testimonialStyles.quoteMark}>
-                        "
-                      </span>
-                      {t.message}
-                      <span className={testimonialStyles.quoteMark}>
-                        "
-                      </span>
-                     </blockquote>
-
-                     <div className={testimonialStyles.footer}>
-                      <div className={testimonialStyles.verified}>
-                        <BadgeCheck className={testimonialStyles.verifiedIcon}/>
-                        <span>Verified Student</span>
-                      </div>
-
-                      <div className={testimonialStyles.date}>
-                        <CalendarDays className={testimonialStyles.dateIcon}/>
-                        <span>2025</span>
-                      </div>
-                     </div>
-
-                  </article>
-
+              <article
+                className={testimonialStyles.card}
+                ref={(el) => (cardsRef.current[i] = el)}
+                style={{
+                  boxShadow: testimonialStyles.cardShadow,
+                }}
+              >
+                {/* COURSE BADGE  */}
+                <div className={testimonialStyles.courseBadge}>
+                  <div className={testimonialStyles.courseBadgeDot}></div>
+                  <span className={testimonialStyles.courseBadgeText}>
+                    {t.course}
+                  </span>
                 </div>
+
+                <div className={testimonialStyles.quoteIcon}>
+                  <MessageSquareQuote
+                    className={testimonialStyles.quoteIconSvg}
+                  />
+                </div>
+
+                <div className={testimonialStyles.content}>
+                  <div className={testimonialStyles.avatarContainer}>
+                    <div className={testimonialStyles.avatarWrapper}>
+                      <img
+                        src={t.avatar}
+                        alt="avatars"
+                        className={testimonialStyles.avatarImage}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className={testimonialStyles.avatarGlow}></div>
+                  </div>
+
+                  <div className={testimonialStyles.userInfo}>
+                    <div className={testimonialStyles.userHeader}>
+                      <div className="min-w-0">
+                        <h3 className={testimonialStyles.userName}>{t.name}</h3>
+                        <p className={testimonialStyles.userRole}>{t.role}</p>
+                      </div>
+                      <div className={testimonialStyles.ratingContainer}>
+                        <div className={testimonialStyles.starsContainer}>
+                          {renderStars(t.rating)}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* message  */}
+                <blockquote className={testimonialStyles.message}>
+                  <span className={testimonialStyles.quoteMark}>"</span>
+                  {t.message}
+                  <span className={testimonialStyles.quoteMark}>"</span>
+                </blockquote>
+
+                <div className={testimonialStyles.footer}>
+                  <div className={testimonialStyles.verified}>
+                    <BadgeCheck className={testimonialStyles.verifiedIcon} />
+                    <span>Verified Student</span>
+                  </div>
+
+                  <div className={testimonialStyles.date}>
+                    <CalendarDays className={testimonialStyles.dateIcon} />
+                    <span>2025</span>
+                  </div>
+                </div>
+              </article>
             </div>
+          </div>
         ))}
       </div>
-      <style>{testimonialStyles.animations}</style>
+      <style jsx>{testimonialStyles.animations}</style>
     </section>
-  )
-}
+  );
+};
 
-export default Testimonial
+export default Testimonial;
